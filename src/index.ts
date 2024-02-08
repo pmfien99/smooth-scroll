@@ -1,11 +1,12 @@
 import { gsap } from 'gsap';
-import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { ScrollTrigger } from 'gsap/all';
+import { ScrollSmoother } from 'gsap/all';
 
 /* The following plugin is a Club GSAP perk */
 window.Webflow ||= [];
 window.Webflow.push(() => {
-  gsap.registerPlugin(ScrollSmoother);
-  const _smoother = ScrollSmoother.create({
+  gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
+  const smoother = ScrollSmoother.create({
     smooth: 0.8,
   });
 });
